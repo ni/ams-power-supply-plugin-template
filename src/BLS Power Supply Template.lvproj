@@ -953,7 +953,7 @@ AddOutputFilter chunkFilter
 				<Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
 				<Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
 				<Property Name="Bld_excludeTypedefs" Type="Bool">true</Property>
-				<Property Name="Bld_localDestDir" Type="Path">/C/builds/RT</Property>
+				<Property Name="Bld_localDestDir" Type="Path">/C/builds</Property>
 				<Property Name="Bld_preActionVIID" Type="Ref">/My Computer/Pre-Build Action.vi</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{D97CD1D6-D13C-4DB8-9216-011E18E426CA}</Property>
 				<Property Name="Bld_targetDestDir" Type="Path">/usr/lib/x86_64-linux-gnu/ni-evo-engine/plugins</Property>
@@ -967,7 +967,7 @@ AddOutputFilter chunkFilter
 				<Property Name="Destination[1].path" Type="Path">/usr/lib/x86_64-linux-gnu/ni-evo-engine/plugins</Property>
 				<Property Name="Destination[1].path.type" Type="Str">&lt;none&gt;</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
-				<Property Name="Source[0].itemID" Type="Str">{678C2CEB-DC15-455D-B9BE-673D87028795}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{DDA085BA-CC1E-45F6-8309-525F6D806BC8}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/RT PXI Target/BLS Power Supply Template.lvlib</Property>
