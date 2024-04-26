@@ -974,6 +974,7 @@ AddOutputFilter chunkFilter
 			<Item Name="Power Gradient.lvclass" Type="LVClass" URL="../../../bls-capabilities/src/Capabilities/Low Level Capabilities/Power/Power Gradient/Power Gradient.lvclass"/>
 			<Item Name="Current Gradient.lvclass" Type="LVClass" URL="../../../bls-capabilities/src/Capabilities/Low Level Capabilities/Current/Current Gradient/Current Gradient.lvclass"/>
 			<Item Name="Power Supply.lvclass" Type="LVClass" URL="../../../bls-capabilities/src/Capabilities/High Level Capabilities/Power Supply/Power Supply.lvclass"/>
+			<Item Name="Apply Gradient.vi" Type="VI" URL="../Apply Gradient.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="BLS Power Supply Template" Type="Packed Library">
