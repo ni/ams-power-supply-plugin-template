@@ -716,6 +716,8 @@ AddOutputFilter chunkFilter
 			<Item Name="Create Config JSON.vi" Type="VI" URL="../Tests/Create Config JSON.vi"/>
 		</Item>
 		<Item Name="BLS Power Supply Template.lvlib" Type="Library" URL="../Plugin/BLS Power Supply Template.lvlib"/>
+		<Item Name="Control Mode Select.vi" Type="VI" URL="../Control Mode Select.vi"/>
+		<Item Name="Create Element Output.vi" Type="VI" URL="../Create Element Output.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Application Directory.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Application Directory.vi"/>
