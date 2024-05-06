@@ -22,10 +22,15 @@ See [GitHub's official documentation](https://help.github.com/articles/using-pul
 # Getting Started
 
 - TODO: include build steps here.
+- Errors must be carried from read VIs to write VIs for process data.vi and then merged for the error out.
+- For Read VIs, changes can be made to the output (such as the SP nodes), and then passed along as input to the Write VIs (for example, the AV nodes).
 
 # Testing
 
 - TODO: include testing steps here.
+- Using PA tools
+- Getting the right IP address for the PXI and RMX power supply
+    - Setting this as an input in ctl
 
 # Developer Certificate of Origin (DCO)
 
