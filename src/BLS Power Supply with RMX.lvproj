@@ -707,6 +707,64 @@ AddOutputFilter chunkFilter
 				</Item>
 			</Item>
 		</Item>
+		<Item Name="Support" Type="Folder">
+			<Item Name="Class" Type="Folder">
+				<Item Name="RMX4120_Class" Type="Folder">
+					<Item Name="RMX4120.lvclass" Type="LVClass" URL="../Support/Class/RMX4120_Class/RMX4120.lvclass"/>
+				</Item>
+				<Item Name="RMXPowerSupply.lvclass" Type="LVClass" URL="../Support/Class/RMXPowerSupply.lvclass"/>
+			</Item>
+			<Item Name="RMX412X" Type="Folder">
+				<Item Name="Private" Type="Folder">
+					<Item Name="Default Setup.vi" Type="VI" URL="../Support/RMX412X/Private/Default Setup.vi"/>
+				</Item>
+				<Item Name="Public" Type="Folder">
+					<Item Name="Action-Status" Type="Folder">
+						<Item Name="Abort Trigger.vi" Type="VI" URL="../Support/RMX412X/Public/Action-Status/Abort Trigger.vi"/>
+						<Item Name="Enable Limits.vi" Type="VI" URL="../Support/RMX412X/Public/Action-Status/Enable Limits.vi"/>
+						<Item Name="Enable Output.vi" Type="VI" URL="../Support/RMX412X/Public/Action-Status/Enable Output.vi"/>
+						<Item Name="Initiate Trigger.vi" Type="VI" URL="../Support/RMX412X/Public/Action-Status/Initiate Trigger.vi"/>
+						<Item Name="Query Mulitchannel Configuration.vi" Type="VI" URL="../Support/RMX412X/Public/Action-Status/Query Mulitchannel Configuration.vi"/>
+						<Item Name="Send Software Trigger.vi" Type="VI" URL="../Support/RMX412X/Public/Action-Status/Send Software Trigger.vi"/>
+					</Item>
+					<Item Name="Configure" Type="Folder">
+						<Item Name="Configure Active Channel.vi" Type="VI" URL="../Support/RMX412X/Public/Configure/Configure Active Channel.vi"/>
+						<Item Name="Configure Alarm.vi" Type="VI" URL="../Support/RMX412X/Public/Configure/Configure Alarm.vi"/>
+						<Item Name="Configure Bleeder.vi" Type="VI" URL="../Support/RMX412X/Public/Configure/Configure Bleeder.vi"/>
+						<Item Name="Configure External Control.vi" Type="VI" URL="../Support/RMX412X/Public/Configure/Configure External Control.vi"/>
+						<Item Name="Configure Global Settings.vi" Type="VI" URL="../Support/RMX412X/Public/Configure/Configure Global Settings.vi"/>
+						<Item Name="Configure Output Monitoring.vi" Type="VI" URL="../Support/RMX412X/Public/Configure/Configure Output Monitoring.vi"/>
+						<Item Name="Configure Output.vi" Type="VI" URL="../Support/RMX412X/Public/Configure/Configure Output.vi"/>
+						<Item Name="Configure Power On State.vi" Type="VI" URL="../Support/RMX412X/Public/Configure/Configure Power On State.vi"/>
+						<Item Name="Configure Protection Limits.vi" Type="VI" URL="../Support/RMX412X/Public/Configure/Configure Protection Limits.vi"/>
+						<Item Name="Configure Trigger.vi" Type="VI" URL="../Support/RMX412X/Public/Configure/Configure Trigger.vi"/>
+					</Item>
+					<Item Name="Data" Type="Folder">
+						<Item Name="Measure Output Values.vi" Type="VI" URL="../Support/RMX412X/Public/Data/Measure Output Values.vi"/>
+					</Item>
+					<Item Name="Utility" Type="Folder">
+						<Item Name="Clear Alarms.vi" Type="VI" URL="../Support/RMX412X/Public/Utility/Clear Alarms.vi"/>
+						<Item Name="Query Error.vi" Type="VI" URL="../Support/RMX412X/Public/Utility/Query Error.vi"/>
+						<Item Name="Recall Setting.vi" Type="VI" URL="../Support/RMX412X/Public/Utility/Recall Setting.vi"/>
+						<Item Name="Reset.vi" Type="VI" URL="../Support/RMX412X/Public/Utility/Reset.vi"/>
+						<Item Name="Revision Query.vi" Type="VI" URL="../Support/RMX412X/Public/Utility/Revision Query.vi"/>
+						<Item Name="Save Setting.vi" Type="VI" URL="../Support/RMX412X/Public/Utility/Save Setting.vi"/>
+					</Item>
+					<Item Name="Close.vi" Type="VI" URL="../Support/RMX412X/Public/Close.vi"/>
+					<Item Name="Initialize.vi" Type="VI" URL="../Support/RMX412X/Public/Initialize.vi"/>
+				</Item>
+			</Item>
+			<Item Name="CheckRMXVersion.vi" Type="VI" URL="../Support/CheckRMXVersion.vi"/>
+			<Item Name="OutputControl.vi" Type="VI" URL="../Support/OutputControl.vi"/>
+			<Item Name="ParseErrorCode.vi" Type="VI" URL="../Support/ParseErrorCode.vi"/>
+			<Item Name="RMX412x Reset.vi" Type="VI" URL="../Support/RMX412x Reset.vi"/>
+			<Item Name="RMX41xInit.vi" Type="VI" URL="../Support/RMX41xInit.vi"/>
+			<Item Name="RMX41xx Status Check.vi" Type="VI" URL="../Support/RMX41xx Status Check.vi"/>
+			<Item Name="RMXCommCheck.vi" Type="VI" URL="../Support/RMXCommCheck.vi"/>
+			<Item Name="RMXWriteRead.vi" Type="VI" URL="../Support/RMXWriteRead.vi"/>
+			<Item Name="SetLimit.vi" Type="VI" URL="../Support/SetLimit.vi"/>
+			<Item Name="TestDebug.vi" Type="VI" URL="../Support/TestDebug.vi"/>
+		</Item>
 		<Item Name="Tests" Type="Folder">
 			<Item Name="SubVI" Type="Folder">
 				<Item Name="Get Version from Build Spec.vi" Type="VI" URL="../Tests/Get Version from Build Spec.vi"/>
@@ -716,8 +774,12 @@ AddOutputFilter chunkFilter
 			<Item Name="Create Config JSON.vi" Type="VI" URL="../Tests/Create Config JSON.vi"/>
 		</Item>
 		<Item Name="BLS Power Supply Template.lvlib" Type="Library" URL="../Plugin/BLS Power Supply Template.lvlib"/>
+		<Item Name="Process Input.vi" Type="VI" URL="../Process Input.vi"/>
+		<Item Name="Process Errors.vi" Type="VI" URL="../Process Errors.vi"/>
+		<Item Name="Process Output.vi" Type="VI" URL="../Process Output.vi"/>
 		<Item Name="Control Mode Select.vi" Type="VI" URL="../Control Mode Select.vi"/>
 		<Item Name="Create Element Output.vi" Type="VI" URL="../Create Element Output.vi"/>
+		<Item Name="RMXPowerSupply.lvclass" Type="LVClass" URL="../../../eap-ev-bts/BTS5.0/ni/evo/PowerSupply/RMX412x/Support/Class/RMXPowerSupply.lvclass"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Application Directory.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Application Directory.vi"/>
@@ -976,7 +1038,28 @@ AddOutputFilter chunkFilter
 			<Item Name="Power Gradient.lvclass" Type="LVClass" URL="../../../bls-capabilities/src/Capabilities/Low Level Capabilities/Power/Power Gradient/Power Gradient.lvclass"/>
 			<Item Name="Current Gradient.lvclass" Type="LVClass" URL="../../../bls-capabilities/src/Capabilities/Low Level Capabilities/Current/Current Gradient/Current Gradient.lvclass"/>
 			<Item Name="Power Supply.lvclass" Type="LVClass" URL="../../../bls-capabilities/src/Capabilities/High Level Capabilities/Power Supply/Power Supply.lvclass"/>
-			<Item Name="Apply Gradient.vi" Type="VI" URL="../Apply Gradient.vi"/>
+			<Item Name="RMX41xx_Config.ctl" Type="VI" URL="../Plugin/BLS Power Supply Template/RMX41xx_Config.ctl"/>
+			<Item Name="Define Data Channels.vi" Type="VI" URL="../Plugin/RMX41XPowerSupply/Define Data Channels.vi"/>
+			<Item Name="Close.vi" Type="VI" URL="../../../eap-ev-bts/BTS5.0/ni/evo/PowerSupply/RMX412x/Support/RMX412X/Public/Close.vi"/>
+			<Item Name="Query Error.vi" Type="VI" URL="../../../eap-ev-bts/BTS5.0/ni/evo/PowerSupply/RMX412x/Support/RMX412X/Public/Utility/Query Error.vi"/>
+			<Item Name="ParseErrorCode.vi" Type="VI" URL="../../../eap-ev-bts/BTS5.0/ni/evo/PowerSupply/RMX412x/Support/ParseErrorCode.vi"/>
+			<Item Name="RMX41XPowerSupply.lvlib" Type="Library" URL="../../../eap-ev-bts/BTS5.0/ni/evo/PowerSupply/RMX412x/Plugin/RMX41XPowerSupply.lvlib"/>
+			<Item Name="BLS Power Supply Template.ctl" Type="VI" URL="../../../bls-power-supply-plugin-template - Copy/src/Plugin/BLS Power Supply Template/BLS Power Supply Template.lvclass/BLS Power Supply Template.ctl"/>
+			<Item Name="RMX41XPowerSupplyService_server.lvlib" Type="Library" URL="../../../eap-ev-bts/BTS5.0/ni/evo/PowerSupply/RMX412x/Plugin/Custom gRPC/RMX41XPowerSupplyService_server/RMX41XPowerSupplyService_server.lvlib"/>
+			<Item Name="RMX4120.lvclass" Type="LVClass" URL="../../../eap-ev-bts/BTS5.0/ni/evo/PowerSupply/RMX412x/Support/Class/RMX4120_Class/RMX4120.lvclass"/>
+			<Item Name="Enable Output.vi" Type="VI" URL="../../../eap-ev-bts/BTS5.0/ni/evo/PowerSupply/RMX412x/Support/RMX412X/Public/Action-Status/Enable Output.vi"/>
+			<Item Name="RMX41xx_Config.ctl" Type="VI" URL="../../../eap-ev-bts/BTS5.0/ni/evo/PowerSupply/RMX412x/Plugin/RMX41XPowerSupply/SubVI/RMX41xx_Config.ctl"/>
+			<Item Name="RMX41xInit.vi" Type="VI" URL="../../../eap-ev-bts/BTS5.0/ni/evo/PowerSupply/RMX412x/Support/RMX41xInit.vi"/>
+			<Item Name="Initialize.vi" Type="VI" URL="../../../eap-ev-bts/BTS5.0/ni/evo/PowerSupply/RMX412x/Support/RMX412X/Public/Initialize.vi"/>
+			<Item Name="Default Setup.vi" Type="VI" URL="../../../eap-ev-bts/BTS5.0/ni/evo/PowerSupply/RMX412x/Support/RMX412X/Private/Default Setup.vi"/>
+			<Item Name="Reset.vi" Type="VI" URL="../../../eap-ev-bts/BTS5.0/ni/evo/PowerSupply/RMX412x/Support/RMX412X/Public/Utility/Reset.vi"/>
+			<Item Name="CheckRMXVersion.vi" Type="VI" URL="../../../eap-ev-bts/BTS5.0/ni/evo/PowerSupply/RMX412x/Support/CheckRMXVersion.vi"/>
+			<Item Name="RMXWriteRead.vi" Type="VI" URL="../../../eap-ev-bts/BTS5.0/ni/evo/PowerSupply/RMX412x/Support/RMXWriteRead.vi"/>
+			<Item Name="RMXCommCheck.vi" Type="VI" URL="../../../eap-ev-bts/BTS5.0/ni/evo/PowerSupply/RMX412x/Support/RMXCommCheck.vi"/>
+			<Item Name="SetLimit.vi" Type="VI" URL="../../../eap-ev-bts/BTS5.0/ni/evo/PowerSupply/RMX412x/Support/SetLimit.vi"/>
+			<Item Name="Measure Output Values.vi" Type="VI" URL="../../../eap-ev-bts/BTS5.0/ni/evo/PowerSupply/RMX412x/Support/RMX412X/Public/Data/Measure Output Values.vi"/>
+			<Item Name="Clear Alarms.vi" Type="VI" URL="../../../eap-ev-bts/BTS5.0/ni/evo/PowerSupply/RMX412x/Support/RMX412X/Public/Utility/Clear Alarms.vi"/>
+			<Item Name="Configure Output.vi" Type="VI" URL="../../../eap-ev-bts/BTS5.0/ni/evo/PowerSupply/RMX412x/Support/RMX412X/Public/Configure/Configure Output.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="BLS Power Supply Template" Type="Packed Library">
