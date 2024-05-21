@@ -708,12 +708,6 @@ AddOutputFilter chunkFilter
 			</Item>
 		</Item>
 		<Item Name="Support" Type="Folder">
-			<Item Name="Class" Type="Folder">
-				<Item Name="RMX4120_Class" Type="Folder">
-					<Item Name="RMX4120.lvclass" Type="LVClass" URL="../Support/Class/RMX4120_Class/RMX4120.lvclass"/>
-				</Item>
-				<Item Name="RMXPowerSupply.lvclass" Type="LVClass" URL="../Support/Class/RMXPowerSupply.lvclass"/>
-			</Item>
 			<Item Name="RMX412X" Type="Folder">
 				<Item Name="Private" Type="Folder">
 					<Item Name="Default Setup.vi" Type="VI" URL="../Support/RMX412X/Private/Default Setup.vi"/>
@@ -764,6 +758,8 @@ AddOutputFilter chunkFilter
 			<Item Name="RMXWriteRead.vi" Type="VI" URL="../Support/RMXWriteRead.vi"/>
 			<Item Name="SetLimit.vi" Type="VI" URL="../Support/SetLimit.vi"/>
 			<Item Name="TestDebug.vi" Type="VI" URL="../Support/TestDebug.vi"/>
+			<Item Name="RMXPowerSupply.lvclass" Type="LVClass" URL="../Support/Class/RMXPowerSupply.lvclass"/>
+			<Item Name="RMX4120.lvclass" Type="LVClass" URL="../Support/Class/RMX4120_Class/RMX4120.lvclass"/>
 		</Item>
 		<Item Name="Tests" Type="Folder">
 			<Item Name="SubVI" Type="Folder">
@@ -779,7 +775,6 @@ AddOutputFilter chunkFilter
 		<Item Name="Process Output.vi" Type="VI" URL="../Process Output.vi"/>
 		<Item Name="Control Mode Select.vi" Type="VI" URL="../Control Mode Select.vi"/>
 		<Item Name="Create Element Output.vi" Type="VI" URL="../Create Element Output.vi"/>
-		<Item Name="RMXPowerSupply.lvclass" Type="LVClass" URL="../../../eap-ev-bts/BTS5.0/ni/evo/PowerSupply/RMX412x/Support/Class/RMXPowerSupply.lvclass"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Application Directory.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Application Directory.vi"/>
@@ -1060,6 +1055,7 @@ AddOutputFilter chunkFilter
 			<Item Name="Measure Output Values.vi" Type="VI" URL="../../../eap-ev-bts/BTS5.0/ni/evo/PowerSupply/RMX412x/Support/RMX412X/Public/Data/Measure Output Values.vi"/>
 			<Item Name="Clear Alarms.vi" Type="VI" URL="../../../eap-ev-bts/BTS5.0/ni/evo/PowerSupply/RMX412x/Support/RMX412X/Public/Utility/Clear Alarms.vi"/>
 			<Item Name="Configure Output.vi" Type="VI" URL="../../../eap-ev-bts/BTS5.0/ni/evo/PowerSupply/RMX412x/Support/RMX412X/Public/Configure/Configure Output.vi"/>
+			<Item Name="RMXPowerSupply.lvclass" Type="LVClass" URL="../../../eap-ev-bts/BTS5.0/ni/evo/PowerSupply/RMX412x/Support/Class/RMXPowerSupply.lvclass"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="BLS Power Supply Template" Type="Packed Library">
