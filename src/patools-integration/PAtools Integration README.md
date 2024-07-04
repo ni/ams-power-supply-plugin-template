@@ -24,10 +24,10 @@ This document describes the process of integrating a new BLS plugin/Driver in PA
 
 3. The window for duplicating the module opens:
 
-![Duplication](../../docs/img/Duplication.png)
+    ![Duplication](../../docs/img/Duplication.png)
 
-Adapt the Target Path as you like. In Find* enter: "Template_PowerSupply_BLS" and in Replace* enter your device name / a modul name, e.g. "NI_RMX412X". Then press "Duplicate".
-Note: In the following the used Normnames/Variables/Group names will all start with "NI_RMX412x" for you they will start with what ever you entered in the Replace* field.
+    Adapt the Target Path as you like. In Find* enter: "Template_PowerSupply_BLS" and in Replace* enter your device name / a modul name, e.g. "NI_RMX412X". Then press "Duplicate".
+    Note: In the following the used Normnames/Variables/Group names will all start with "NI_RMX412x" for you they will start with what ever you entered in the Replace* field.
 
 4. After the duplication, the module "NI_RMX412X_(Module_NI_RMX412X) appears in the folder you selected
 
@@ -55,13 +55,13 @@ Note: In the following the used Normnames/Variables/Group names will all start w
     Note: When you adapt the module later you can increase the version and add also information here. 
 
 6. Adaptions if you added something to the Plugin Configuration:
-The plugin configuration string is build in the PAscript-Graph "NI_RMX412X.PS" (NI_RMX412X_system).
+    The plugin configuration string is build in the PAscript-Graph "NI_RMX412X.PS" (NI_RMX412X_system).
 
-![Config](../../docs/img/Build_Config.png)
+    ![Config](../../docs/img/Build_Config.png)
 
-Adapt how "NI_RMX412X_PluginConfiguration" is build together so it matches your configuration. If you added parameters, create normnames for them, add them as global variables and also add them in the Initialization of Variables group "NI_RMX412X_Config".
+    Adapt how "NI_RMX412X_PluginConfiguration" is build together so it matches your configuration. If you added parameters, create normnames for them, add them as global variables and also add them in the Initialization of Variables group "NI_RMX412X_Config".
 
-Note: If the Config json string is getting to large for PAtools (>4096 characters) you need to place the config on the PXI and write the Path to that config in NI_RMX412X_PluginConfiguration.
+    Note: If the Config json string is getting to large for PAtools (>4096 characters) you need to place the config on the PXI and write the Path to that config in NI_RMX412X_PluginConfiguration.
 
 7. Adaptions if you added/removed Consumer Channels
 
