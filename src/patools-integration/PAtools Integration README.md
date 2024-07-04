@@ -39,11 +39,11 @@ Note: In the following the used Normnames/Variables/Group names will all start w
     5.2 In the "NI_RMX412X_Version" Variables group (NI_RMX412X_system/version)
         * NI_RMX412x_Version: 1.0.0 (enter a version you would like to start with, 1.0.0 is an example here)
 
-    6.3 In the PAbasic "NI_RMX412X_Version" adapt the content so you give the information when you created that module, who did create it and which template version you used, e.g. like that:
+    5.3 In the PAbasic "NI_RMX412X_Version" adapt the content so you give the information when you created that module, who did create it and which template version you used, e.g. like that:
 
     ![Version](../../docs/img/version.png)
 
-    6.4 In the Initialization of Variables group "NI_RMX412X_Config":
+    5.4 In the Initialization of Variables group "NI_RMX412X_Config":
 
     * BLS Plugin Address: Enter the address of the device, could be an IP address
     * BLS Instance Name: Give an unique Instance Name under which the plugin should be loaded
