@@ -29,18 +29,21 @@ This document describes the process of integrating a new BLS plugin/Driver in PA
 4. Must do Adaptions
 
     4.1 In the "NI_RMX412X_UB" Variables group (NI_RMX412X_system/userbox)
-        * NI_RMX412x_Main.UB.Header: Enter a name you want to display in the Userbox, e.g. "NI_RMX412X
+        * NI_RMX412x_Main.UB.Header: Enter a name you want to display in the Userbox, e.g. "NI_RMX412X"
 
-    4.2 In the "NI_RMX412X_Version" Variables group (NI_RMX412X_system/version)
+    4.2 In the "NI_RMX412X_MULTIL.TAB" table (NI_RMX412X_system/userbox)
+        * NI_RMX412x_UB_ModuleDescription.CA.TXT: Enter for each language a name you want to display at the buttom of the Userbox, e.g. "NI_RMX412X"
+
+    4.3 In the "NI_RMX412X_Version" Variables group (NI_RMX412X_system/version)
         * NI_RMX412x_Version: 1.0.0 (enter a version you would like to start with, 1.0.0 is an example here)
 
-    4.3 In the PAbasic "NI_RMX412X_Version" adapt the content so you give the information when you created that module, who did create it and which template version you used, e.g. like that:
+    4.4 In the PAbasic "NI_RMX412X_Version" adapt the content so you give the information when you created that module, who did create it and which template version you used, e.g. like that:
 
     ![Version](../docs/img/version.png)
 
     Note: When you adapt the module later you can increase the version and add also information here. 
 
-    4.4 In the Initialization of Variables group "NI_RMX412X_Config":
+    4.5 In the Initialization of Variables group "NI_RMX412X_Config":
 
     * BLS Plugin Address: Enter the address of the device, could be an IP address
     * BLS Instance Name: Give an unique Instance Name under which the plugin should be loaded
@@ -49,7 +52,7 @@ This document describes the process of integrating a new BLS plugin/Driver in PA
     * BLS Pugin Version: Enter the plugin version, e.g. "1.0"
     * Timeout for initializing: Give a value in seconds how to long to wait until a timeout is triggered
 
-    4.5 In the Initialization of Variables group "NI_RMX412X.ch01" (NI_RMX412X_config/NI_RMX412x.ch01) adapt the initialization values to that of your device
+    4.6 In the Initialization of Variables group "NI_RMX412X.ch01" (NI_RMX412X_config/NI_RMX412x.ch01) adapt the initialization values to that of your device
 
     Note: When you make changes to ch01 also do that for ch02, alternatively delete the NI_RMX412X.ch02 folder and duplicate the NI_RMX412X.ch01 folder again
 
@@ -150,3 +153,5 @@ This document describes the process of integrating a new BLS plugin/Driver in PA
 5. Initialize the driver
 
 6. Test each functionality, including error scenarios
+
+    ![PAcontroller](../docs/img/PAcontroller.png)
