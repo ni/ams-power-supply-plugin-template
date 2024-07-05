@@ -75,30 +75,30 @@ This document describes the process of integrating a new BLS plugin/Driver in PA
     UINT32 and DOUBLES on LabView side are Floats on PAtools side.
 
     6.1 Producers:
-
-        The Producers of the plugin are entered in the "NI_RMX412X.ch01.Producer.TAB":
+   
+    The Producers of the plugin are entered in the "NI_RMX412X.ch01.Producer.TAB":
         
     ![Producers](../docs/img/Producers.png)
 
-        * Column 1: Value
-        * Column 2: Name
-        * Column 3: Data type (CV_BLS_INT8,...)
-        * Column 4: Status of the linking of the channels (-1: not found, 1: opened, 2: linked)
+    * Column 1: Value
+    * Column 2: Name
+    * Column 3: Data type (CV_BLS_INT8,...)
+    * Column 4: Status of the linking of the channels (-1: not found, 1: opened, 2: linked)
 
 
     6.2 Consumers:
     
-        The Consumers of the plugin are entered in the "NI_RMX412X.ch01.Consumer.TAB":
+   The Consumers of the plugin are entered in the "NI_RMX412X.ch01.Consumer.TAB":
         
     ![Consumers](../docs/img/Consumers.png)
-        
-        * Column 1: Value
-        * Column 2: Name
-        * Column 3: Data type (CV_BLS_INT8,...)
-        * Column 4: Status of the linking of the channels (-1: not found, 1: opened, 2: linked)
-        * Column 5: Default Value (mostly same variable as Value, but could also enter hard coded values here)
 
-7. Adapt Userbox
+    * Column 1: Value
+    * Column 2: Name
+    * Column 3: Data type (CV_BLS_INT8,...)
+    * Column 4: Status of the linking of the channels (-1: not found, 1: opened, 2: linked)
+    * Column 5: Default Value (mostly same variable as Value, but could also enter hard coded values here)
+
+8. Adapt Userbox
 
     You can adapt the Userbox tabs:
 
@@ -106,30 +106,30 @@ This document describes the process of integrating a new BLS plugin/Driver in PA
     * "NI_RMX412X_Main.UB.TAB" (NI_RMX412X_system/userbox) for things belonging to the whole plugin
     * "NI_RMX412X_Configuration.UB.TAB" (NI_RMX412X_system/userbox) for the plugin configuration
 
-8. Check Monitorings
+9. Check Monitorings
 
     Check the existing monitorings/alarms and add them if you miss something.
 
     * "NI_RMX412X.ch01.MON" (NI_RMX412X_config/NI_RMX412X.ch01): For channel monitoring
     * "NI_RMX412X_MON" (NI_RMX412X_system/monitoring): For overall monitoring
 
-9. Adaptions if you have a different amount of channels compared to the template
+10. Adaptions if you have a different amount of channels compared to the template
     
     If you have less channels just remove the excess folders in the NI_RMX412X_config, if you have more just duplicate them.
    
     Note: If you duplicated a folder don't forget to adapt the channel names in "NI_RMX412X.chXX.ChannelVariables" and also check "NI_RMX412X.chXX.MSG.TAB"
 
-10. Adapt Mappings
+11. Adapt Mappings
 
     If you need mappings from or to a different module you can add them to mapping tables in the NI_RMX412X_config.
 
-11. STMC 
+12. STMC 
 
     If you want to use STMC make sure that:
     * You use an unique STMC ID
     * You adapted the NI_RMX412X_STMC.TAB, NI_RMX412X_STMC.PS and NI_RMX412X.ch01.Init.PS as you need
 
-12. Optionally you can add additional functionality in the driver, e.g. calculations
+13. Optionally you can add additional functionality in the driver, e.g. calculations
 
 # Test PAtools driver
 
