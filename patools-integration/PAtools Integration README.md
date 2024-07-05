@@ -75,6 +75,7 @@ This document describes the process of integrating a new BLS plugin/Driver in PA
     UINT32 and DOUBLES on LabView side are Floats on PAtools side.
 
     6.1 Producers:
+
         The Producers of the plugin are entered in the "NI_RMX412X.ch01.Producer.TAB":
         
     ![Producers](../docs/img/Producers.png)
@@ -86,6 +87,7 @@ This document describes the process of integrating a new BLS plugin/Driver in PA
 
 
     6.2 Consumers:
+    
         The Consumers of the plugin are entered in the "NI_RMX412X.ch01.Consumer.TAB":
         
     ![Consumers](../docs/img/Consumers.png)

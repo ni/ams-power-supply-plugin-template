@@ -46,3 +46,6 @@ The test/ plugin contains an example for a package which will install the lvlibp
 # Testing
 
 * The Power Supply with RMX Plugin can be tested by using the PAtools BLS dashboard and local PXI which allow for the control of input variables and monitoring of output values. 
+
+# PAtools Integration
+see [PAtools Integration Readme](/patools-integration/PAtools%20Integration%20README.md)
