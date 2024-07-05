@@ -77,7 +77,7 @@ This document describes the process of integrating a new BLS plugin/Driver in PA
     6.1 Producers:
         The Producers of the plugin are entered in the "NI_RMX412X.ch01.Producer.TAB":
         
-        ![Producers](../docs/img/Producers.png)
+    ![Producers](../docs/img/Producers.png)
 
         * Column 1: Value
         * Column 2: Name
@@ -88,7 +88,7 @@ This document describes the process of integrating a new BLS plugin/Driver in PA
     6.2 Consumers:
         The Consumers of the plugin are entered in the "NI_RMX412X.ch01.Consumer.TAB":
         
-        ![Consumers](../docs/img/Consumers.png)
+    ![Consumers](../docs/img/Consumers.png)
         
         * Column 1: Value
         * Column 2: Name
@@ -147,4 +147,4 @@ This document describes the process of integrating a new BLS plugin/Driver in PA
 
 5. Initialize the driver
 
-6. Test each Functionality, including error scenarios
+6. Test each functionality, including error scenarios
