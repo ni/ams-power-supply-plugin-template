@@ -4,7 +4,7 @@ This document describes the process of integrating a new BLS plugin/Driver in PA
 
 # Create PAtools driver
 
-1. If you do not already have the Template_PowerSupply_BLS module in your Database import it:
+1. If you do not already have the Template_PowerSupply_BLS module in your database, import it:
 
     ![Module Import](../docs/img/Module-Import.png)
 
@@ -125,6 +125,10 @@ This document describes the process of integrating a new BLS plugin/Driver in PA
 11. Adapt Mappings
 
     If you need mappings from or to a different module you can add them to mapping tables in the NI_RMX412X_config.
+
+12. Check DSO Version
+
+    in NI_RMX412X check if the right version of the DSO_configuration is active, e.g. DSO_configuration_24Q4. If not deactivate that version and activate the other one, e.g. 24Q2.
 
 12. STMC 
 
