@@ -32,7 +32,7 @@ This document describes the process of integrating a new BLS plugin/Driver in PA
         * NI_RMX412x_Main.UB.Header: Enter a name you want to display in the Userbox, e.g. "NI_RMX412X"
 
     4.2 In the "NI_RMX412X_MULTIL.TAB" table (NI_RMX412X_system/userbox)
-        * NI_RMX412x_UB_ModuleDescription.CA.TXT: Enter for each language a name you want to display at the buttom of the Userbox, e.g. "NI_RMX412X"
+        * NI_RMX412x_UB_ModuleDescription.CA.TXT: Enter for each language a name you want to display at the bottom of the Userbox, e.g. "NI_RMX412X"
 
     4.3 In the "NI_RMX412X_Version" Variables group (NI_RMX412X_system/version)
         * NI_RMX412x_Version: 1.0.0 (enter a version you would like to start with, 1.0.0 is an example here)
@@ -48,9 +48,11 @@ This document describes the process of integrating a new BLS plugin/Driver in PA
     * BLS Plugin Address: Enter the address of the device, could be an IP address
     * BLS Instance Name: Give an unique Instance Name under which the plugin should be loaded
     * BLS Plugin Execution Frequency: Select the Frequency with which you want to execute the plugin in Hz
-    * BLS Plugin Name: Name of the plugin, e.g. "BLS Power Supply Template"
+    * BLS Plugin Name: Name of the plugin, e.g. "BLS Power Supply Template" 
     * BLS Pugin Version: Enter the plugin version, e.g. "1.0"
-    * Timeout for initializing: Give a value in seconds how to long to wait until a timeout is triggered
+    * Timeout for initializing: Give a value in seconds how long to wait until a timeout is triggered
+
+    Note: The name of the lvlibp is e.g. "BLS Power Supply Template.1.0.lvlibp". So the front part is the plugin name, followed by the version. Only enter the name without the version and ending to the BLS Plugin Name and also just write the version on the BLS Plugin Version.
 
     4.6 In the Initialization of Variables group "NI_RMX412X.ch01" (NI_RMX412X_config/NI_RMX412x.ch01) adapt the initialization values to that of your device
 
@@ -58,24 +60,26 @@ This document describes the process of integrating a new BLS plugin/Driver in PA
 
 5. Plugin Configuration Adaptions
 
-    If you adapted the plugin configuration you need to adapt it in the PAscript-Graph "NI_RMX412X.PS" (NI_RMX412X_system).
+    If you adapted the plugin configuration for your plugin you need to adapt it also in the PAscript-Graph "NI_RMX412X.PS" (NI_RMX412X_system).
 
     ![Config](../docs/img/Build_Config.png)
 
     Adapt how "NI_RMX412X_PluginConfiguration" is build together so it matches your configuration. If you added parameters, create normnames for them, add them as global variables and also add them in the Initialization of Variables group "NI_RMX412X_Config". Constants can be added as hard coded values.
 
-    Note: If the Config json string is getting to large for PAtools (>4096 characters) you need to place the config on the PXI and write the Path to that config in NI_RMX412X_PluginConfiguration.
+    Note: Instead of building the config in PAscript, you can also remove that state and just put the whole config string to "NI_RMX412X_PluginConfiguration" or alternatively put the config json file on the system and write the path to "NI_RMX412X_PluginConfiguration". If the Config json string is getting to large for PAtools (>4096 characters) you need to place the config on the PXI.
 
 6. Plugin Capabilities
 
-    If you added, removed or do not want to use certain capabilities you need to adapt the Producers and Consumers on PAtools side in (NI_RMX412X_config/NI_RMX412X.ch01). If you removed capabilities or don't want to use them, remove the variables in every group. If you added Capabilities create needed normnames and variable initializations for them in the Variable group "NI_RMX412X.ch01.ChannelVariables". They Normnames should start with "NI_RMX412X.ch01." followed by the capability (e.g. "ControlMode") and ending with a suffix (e.g. .STS), e.g. "NI_RMX412X.ch01.ControlMode.STS". For each capability the following variables are needed:
+    If you added, removed or do not want to use certain capabilities you need to adapt the Producers and Consumers on PAtools side in (NI_RMX412X_config/NI_RMX412X.ch01). If you removed capabilities or don't want to use them, remove the variables in every group. If you added Capabilities create needed normnames and variable initializations for them in the Variable group "NI_RMX412X.ch01.ChannelVariables". The Normnames should start with "NI_RMX412X.ch01." followed by the capability (e.g. "ControlMode") and ending with a suffix (e.g. .STS), e.g. "NI_RMX412X.ch01.ControlMode.STS". For each capability the following variables are needed:
 
-    * Value: A integer/float variable you want to read from or write to. Suffixes: .ACT, .STS, ...
+    * Value: An integer/float variable you want to read from or write to. Suffixes: .ACT, .STS, ...
     * Name: A string variable the channel name is written on, e.g. "_ControlMode.ch1.CTL". Suffix: ".CH.TXT"
-    * Status: A integer variable on which the channel Status is written on. Suffix: ".CH.STS"
+    * Status: An integer variable on which the channel Status is written on. Suffix: ".CH.STS"
 
     Boolean, INT8, UINT8, INT16, UINT16 and INT32 on LabView side are Integers on PAtools side.
     UINT32 and DOUBLES on LabView side are Floats on PAtools side.
+
+    Note: In the following Producers are channels which the plugin writes to and PAtools reads from. Consumers are channels the plugin reads from and PAtools writes to.
 
     6.1 Producers:
    
@@ -86,8 +90,7 @@ This document describes the process of integrating a new BLS plugin/Driver in PA
     * Column 1: Value
     * Column 2: Name
     * Column 3: Data type (CV_BLS_INT8,...)
-    * Column 4: Status of the linking of the channels (-1: not found, 1: opened, 2: linked)
-
+    * Column 4: Status of the linking of the channels (-1: not found, 0: nothing done yet, 1: opened, 2: linked)
 
     6.2 Consumers:
     
