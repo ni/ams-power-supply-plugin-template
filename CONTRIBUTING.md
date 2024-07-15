@@ -18,7 +18,7 @@
 
 # Using a Real Device
 
-- Ensure that in Process Data.vi from the template, the simulation helper VIs and connections are removed and replaced with driver calls.
+- Ensure that in Process Data.vi from the template, the simulation helper VIs and connections are removed and replaced with driver calls.The Process Data.vi can be used as a simulator to create connections between LLCs and ensure that an accurate output is generated. To use a real device, connect the ADAS HIL obect and Power Supply Objects to the Read and Write VIs for the capabilities. Process Input.vi and Process Output.vi can be used as helper VIs. 
 
 - Make sure that inside of the Exit Initialize.vi, the device initialize VI is connected.
 
