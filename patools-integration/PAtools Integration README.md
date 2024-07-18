@@ -20,11 +20,11 @@ This document describes the process of integrating a new BLS plugin/Driver in PA
 
     * Target Path: Adapt as you like
     * Find*: enter "Template_PowerSupply_BLS"
-    * Replace*: enter your device name / a modul name, e.g. "NI_RMX412X"
+    * Replace*: enter your device name / a module name, e.g. "NI_RMX412X"
     
     Press "Duplicate". When finished the module "NI_RMX412X_(Module_NI_RMX412X)" appears in the path you selected
 
-    Note: In the following the used Normnames/Variables/Group names will all start with "NI_RMX412x" for you they will start with what ever you entered in the Replace* field.
+    Note: In the following the used Normnames/Variables/Group names will all start with "NI_RMX412x". For you they will start with what ever you entered in the Replace* field.
 
 4. Must do Adaptions
 
@@ -37,11 +37,11 @@ This document describes the process of integrating a new BLS plugin/Driver in PA
     4.3 In the "NI_RMX412X_Version" Variables group (NI_RMX412X_system/version)
         * NI_RMX412x_Version: 1.0.0 (enter a version you would like to start with, 1.0.0 is an example here)
 
-    4.4 In the PAbasic "NI_RMX412X_Version" adapt the content so you give the information when you created that module, who did create it and which template version you used, e.g. like that:
+    4.4 In the PAbasic "NI_RMX412X_Version" adapt the content so you give the information when you created that module, who did create it (in the example it is "BTO") and which template version you used, e.g. like that:
 
     ![Version](../docs/img/version.png)
 
-    Note: When you adapt the module later you can increase the version and add also information here. 
+    Note: When you adapt the module later, you can increase the version and add also information here.  
 
     4.5 In the Initialization of Variables group "NI_RMX412X_Config":
 
@@ -66,7 +66,7 @@ This document describes the process of integrating a new BLS plugin/Driver in PA
 
     Adapt how "NI_RMX412X_PluginConfiguration" is build together so it matches your configuration. If you added parameters, create normnames for them, add them as global variables and also add them in the Initialization of Variables group "NI_RMX412X_Config". Constants can be added as hard coded values.
 
-    Note: Instead of building the config in PAscript, you can also remove that state and just put the whole config string to "NI_RMX412X_PluginConfiguration" or alternatively put the config json file on the system and write the path to "NI_RMX412X_PluginConfiguration". If the Config json string is getting to large for PAtools (>4096 characters) you need to place the config on the PXI.
+    Note: Instead of building the config in PAscript, you can also remove that state and just put the whole config string to "NI_RMX412X_PluginConfiguration" or alternatively put the config json file on the system and write the path to "NI_RMX412X_PluginConfiguration". If the Config json string is getting too large for PAtools (>4096 characters) you need to place the config on the PXI.
 
 6. Plugin Capabilities
 
@@ -121,17 +121,19 @@ This document describes the process of integrating a new BLS plugin/Driver in PA
 
 10. Adaptions if you have a different amount of channels compared to the template
     
-    If you have less channels just remove the excess folders in the NI_RMX412X_config, if you have more just duplicate them.
+    If you have fewer channels just remove the excess folders in the NI_RMX412X_config, if you have more just duplicate them.
    
     Note: If you duplicated a folder don't forget to adapt the channel names in "NI_RMX412X.chXX.ChannelVariables" and also check "NI_RMX412X.chXX.MSG.TAB"
 
 11. Adapt Mappings
 
-    If you need mappings from or to a different module you can add them to mapping tables in the NI_RMX412X_config.
+    If you need mappings from or to a different module, you can add them to mapping tables in the NI_RMX412X_config.
 
 12. Check DSO Version
 
     in NI_RMX412X check if the right version of the DSO_configuration is active, e.g. DSO_configuration_24Q4. If not deactivate that version and activate the other one, e.g. 24Q2.
+
+    Note: Here the "24Q2" is the linux version.
 
 12. STMC 
 
