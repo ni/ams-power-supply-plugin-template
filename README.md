@@ -12,7 +12,7 @@ It requires the [BLS Capabilities](https://github.com/ni/bls-capabilities).
 - ADAS Replay HIL Development Suite 24Q1
 
 # Create your own plugin
-Make sure you read the [BLS Capabilities README](https://github.com/ni/bls-capabilities). [Here](https://github.com/ni/bls-capabilities/main/BLSTEMPLATES.md) it is described how to create your own plugin and how to test it.
+Make sure you read the [BLS Capabilities README](https://github.com/ni/bls-capabilities). [Here](https://github.com/ni/bls-capabilities/blob/main/BLSTEMPLATES.md) it is described how to create your own plugin and how to test it.
 
 # PAtools Integration
 see [PAtools Integration Readme](/patools-integration/PAtools%20Integration%20README.md)
