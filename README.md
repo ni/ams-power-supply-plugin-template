@@ -8,8 +8,8 @@ It requires the [BLS Capabilities](https://github.com/ni/bls-capabilities).
 - PAtools 8.4+
 - LinuxRT 24Q2+
 - LabVIEW 2023Q3+
-- BLS Capabilities API 0.5+
-- ADAS Replay HIL Development Suite 24Q1
+- BLS Capabilities API 1.0+
+- ADAS Replay HIL Development Suite 24Q1+
 
 # Create your own plugin
 Make sure you read the [BLS Capabilities README](https://github.com/ni/bls-capabilities). [Here](https://github.com/ni/bls-capabilities/blob/main/BLSTEMPLATES.md) it is described how to create your own plugin and how to test it.
