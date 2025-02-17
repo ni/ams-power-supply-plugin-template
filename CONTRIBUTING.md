@@ -1,4 +1,4 @@
-# Contributing to BLS Power Supply
+# Contributing to AMS Power Supply
 
 # Style Guide
 
