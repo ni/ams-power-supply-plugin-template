@@ -14,6 +14,7 @@
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
 		<Item Name="Pre-Build Action.vi" Type="VI" URL="../Build Actions/Pre-Build Action.vi"/>
+		<Item Name="Post-Build Action.vi" Type="VI" URL="../Build Actions/Post-Build Action.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="AdasReplayUtilities.lvlib" Type="Library" URL="/&lt;vilib&gt;/ADAS Replay HIL/AdasReplayUtilities/AdasReplayUtilities.lvlib"/>
@@ -465,6 +466,11 @@
 				<Item Name="NI_SHA-3.lvclass" Type="LVClass" URL="/&lt;vilib&gt;/security/Message Digest/SHA-3/NI_SHA-3.lvclass"/>
 				<Item Name="NI_Keccak.lvlib" Type="Library" URL="/&lt;vilib&gt;/security/Message Digest/Keccak/NI_Keccak.lvlib"/>
 				<Item Name="NI_SHA-512.lvclass" Type="LVClass" URL="/&lt;vilib&gt;/security/Message Digest/SHA-2/SHA-512/NI_SHA-512.lvclass"/>
+				<Item Name="JDP Utility.lvlib" Type="Library" URL="/&lt;vilib&gt;/JDP Science/JDP Science Common Utilities/JDP Utility.lvlib"/>
+				<Item Name="JSONtext.lvlib" Type="Library" URL="/&lt;vilib&gt;/JDP Science/JSONtext/JSONtext.lvlib"/>
+				<Item Name="subFile Dialog.vi" Type="VI" URL="/&lt;vilib&gt;/express/express input/FileDialogBlock.llb/subFile Dialog.vi"/>
+				<Item Name="ex_CorrectErrorChain.vi" Type="VI" URL="/&lt;vilib&gt;/express/express shared/ex_CorrectErrorChain.vi"/>
+				<Item Name="Assert Error Cluster Type.vim" Type="VI" URL="/&lt;vilib&gt;/Utility/TypeAssert/Assert Error Cluster Type.vim"/>
 			</Item>
 			<Item Name="provcom_StringGlobals.vi" Type="VI" URL="/&lt;resource&gt;/Framework/Providers/Common/provcom_StringGlobals.vi"/>
 			<Item Name="mxLvGetItem.vi" Type="VI" URL="/&lt;resource&gt;/Framework/Providers/API/mxLvGetItem.vi"/>
@@ -597,8 +603,12 @@
 			<Item Name="AB_Get_Info_From_GUID.vi" Type="VI" URL="/&lt;resource&gt;/Framework/Providers/Builds/AppBuilder/AB_Get_Info_From_GUID.vi"/>
 			<Item Name="provcom_GetProvidersDirPseudo.vi" Type="VI" URL="/&lt;resource&gt;/Framework/Providers/Common/provcom_GetProvidersDirPseudo.vi"/>
 			<Item Name="mxLvGetItemRef.vi" Type="VI" URL="/&lt;resource&gt;/Framework/Providers/API/mxLvGetItemRef.vi"/>
-			<Item Name="9c1d1a77308d2a44" Type="VI" URL="/&lt;resource&gt;/9c1d1a77308d2a44"/>
 			<Item Name="_LaunchHelpUrl.vi" Type="VI" URL="/&lt;helpdir&gt;/_LaunchHelpUrl.vi"/>
+			<Item Name="9c1d1a77308d2a44" Type="VI" URL="/&lt;resource&gt;/9c1d1a77308d2a44"/>
+			<Item Name="Utilities.lvlib" Type="Library" URL="../../Capabilities/Capabilities/Utilities/Utilities.lvlib"/>
+			<Item Name="AdasHilServices.dll" Type="Document" URL="AdasHilServices.dll">
+				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
+			</Item>
 		</Item>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
@@ -711,14 +721,20 @@ AddOutputFilter chunkFilter
 		<Item Name="Tests" Type="Folder">
 			<Item Name="SubVI" Type="Folder">
 				<Item Name="Get Version from Build Spec.vi" Type="VI" URL="../Tests/Get Version from Build Spec.vi"/>
+				<Item Name="Create Enhanced Config JSON.vi" Type="VI" URL="../Tests/Create Enhanced Config JSON.vi"/>
 			</Item>
 			<Item Name="Test AMS Power Supply Template.vi" Type="VI" URL="../Tests/Test AMS Power Supply Template.vi"/>
 			<Item Name="Test AMS Power Supply Template UI.vi" Type="VI" URL="../Tests/Test AMS Power Supply Template UI.vi"/>
 			<Item Name="Create Config JSON.vi" Type="VI" URL="../Tests/Create Config JSON.vi"/>
 		</Item>
+		<Item Name="Simu" Type="Folder">
+			<Item Name="Control Simu.vi" Type="VI" URL="../Simu/Control Simu.vi"/>
+			<Item Name="Create Element Output Power Supply.vi" Type="VI" URL="../Simu/Create Element Output Power Supply.vi"/>
+			<Item Name="Measure Simu.vi" Type="VI" URL="../Simu/Measure Simu.vi"/>
+			<Item Name="Apply Gradient Power Supply.vi" Type="VI" URL="../Simu/Apply Gradient Power Supply.vi"/>
+			<Item Name="Control Mode Select Power Supply.vi" Type="VI" URL="../Simu/Control Mode Select Power Supply.vi"/>
+		</Item>
 		<Item Name="AMS Power Supply Template.lvlib" Type="Library" URL="../Plugin/AMS Power Supply Template.lvlib"/>
-		<Item Name="Control Mode Select.vi" Type="VI" URL="../Control Mode Select.vi"/>
-		<Item Name="Create Element Output.vi" Type="VI" URL="../Create Element Output.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Application Directory.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Application Directory.vi"/>
@@ -784,12 +800,11 @@ AddOutputFilter chunkFilter
 				<Item Name="Random Number (Range) I64.vi" Type="VI" URL="/&lt;vilib&gt;/numeric/Random Number (Range) I64.vi"/>
 				<Item Name="Random Number (Range) DBL.vi" Type="VI" URL="/&lt;vilib&gt;/numeric/Random Number (Range) DBL.vi"/>
 				<Item Name="Random Number (Range).vi" Type="VI" URL="/&lt;vilib&gt;/numeric/Random Number (Range).vi"/>
-				<Item Name="Is Value Changed.vim" Type="VI" URL="/&lt;vilib&gt;/Utility/Is Value Changed.vim"/>
-				<Item Name="JSONtext.lvlib" Type="Library" URL="/&lt;vilib&gt;/JDP Science/JSONtext/JSONtext.lvlib"/>
 				<Item Name="JDP Utility.lvlib" Type="Library" URL="/&lt;vilib&gt;/JDP Science/JDP Science Common Utilities/JDP Utility.lvlib"/>
-				<Item Name="Tag Wrapper.lvlib" Type="Library" URL="/&lt;vilib&gt;/ADAS Replay HIL/Channels/Tag Wrapper/Tag Wrapper.lvlib"/>
+				<Item Name="JSONtext.lvlib" Type="Library" URL="/&lt;vilib&gt;/JDP Science/JSONtext/JSONtext.lvlib"/>
 				<Item Name="subFile Dialog.vi" Type="VI" URL="/&lt;vilib&gt;/express/express input/FileDialogBlock.llb/subFile Dialog.vi"/>
 				<Item Name="ex_CorrectErrorChain.vi" Type="VI" URL="/&lt;vilib&gt;/express/express shared/ex_CorrectErrorChain.vi"/>
+				<Item Name="NI_XML.lvlib" Type="Library" URL="/&lt;vilib&gt;/xml/NI_XML.lvlib"/>
 			</Item>
 			<Item Name="user.lib" Type="Folder">
 				<Item Name="SEH Shared Error Options.ctl" Type="VI" URL="/&lt;userlib&gt;/_SEH/Controls/SEH/SEH Shared Error Options.ctl"/>
@@ -823,9 +838,6 @@ AddOutputFilter chunkFilter
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
 			<Item Name="LV Config Read String.vi" Type="VI" URL="/&lt;resource&gt;/dialog/lvconfig.llb/LV Config Read String.vi"/>
-			<Item Name="Power Supply.lvclass" Type="LVClass" URL="../../Capabilities/Capabilities/High Level Capabilities/Power Supply/Power Supply.lvclass"/>
-			<Item Name="Apply Gradient.vi" Type="VI" URL="../Apply Gradient.vi"/>
-			<Item Name="Create Asset JSON.vi" Type="VI" URL="../../Capabilities/Create Asset JSON.vi"/>
 			<Item Name="evoPluginSDK.lvlibp" Type="LVLibp" URL="../../../ADAS Replay HIL/EVO SDK/Linux RT/evoLabVIEWAPI/evoPluginSDK.lvlibp">
 				<Item Name="EventData" Type="Folder">
 					<Item Name="ExecuteEventData.ctl" Type="VI" URL="../../../ADAS Replay HIL/EVO SDK/Linux RT/evoLabVIEWAPI/evoPluginSDK.lvlibp/VIs/EventData/ExecuteEventData.ctl"/>
@@ -958,28 +970,11 @@ AddOutputFilter chunkFilter
 				<Item Name="WrapperHelpers.lvlib" Type="Library" URL="../../../ADAS Replay HIL/EVO SDK/Linux RT/evoLabVIEWAPI/evoBlockPlugin.lvlibp/WrapperHelpers/WrapperHelpers.lvlib"/>
 			</Item>
 			<Item Name="Utilities.lvlib" Type="Library" URL="../../Capabilities/Capabilities/Utilities/Utilities.lvlib"/>
-			<Item Name="Setpoint.lvclass" Type="LVClass" URL="../../Capabilities/Capabilities/Parents/Setpoint/Setpoint.lvclass"/>
-			<Item Name="Actual Value.lvclass" Type="LVClass" URL="../../Capabilities/Capabilities/Parents/Actual Value/Actual Value.lvclass"/>
-			<Item Name="Limit.lvclass" Type="LVClass" URL="../../Capabilities/Capabilities/Parents/Limit/Limit.lvclass"/>
-			<Item Name="Gradient.lvclass" Type="LVClass" URL="../../Capabilities/Capabilities/Parents/Gradient/Gradient.lvclass"/>
-			<Item Name="Current Actual Value.lvclass" Type="LVClass" URL="../../Capabilities/Capabilities/Low Level Capabilities/Current/Current Actual Value/Current Actual Value.lvclass"/>
-			<Item Name="Current Setpoint.lvclass" Type="LVClass" URL="../../Capabilities/Capabilities/Low Level Capabilities/Current/Current Setpoint/Current Setpoint.lvclass"/>
-			<Item Name="Voltage Actual Value.lvclass" Type="LVClass" URL="../../Capabilities/Capabilities/Low Level Capabilities/Voltage/Voltage Actual Value/Voltage Actual Value.lvclass"/>
-			<Item Name="Voltage Setpoint.lvclass" Type="LVClass" URL="../../Capabilities/Capabilities/Low Level Capabilities/Voltage/Voltage Setpoint/Voltage Setpoint.lvclass"/>
-			<Item Name="OnOff.lvclass" Type="LVClass" URL="../../Capabilities/Capabilities/Low Level Capabilities/OnOff/OnOff.lvclass"/>
-			<Item Name="Output Enable.lvclass" Type="LVClass" URL="../../Capabilities/Capabilities/Low Level Capabilities/Output Enable/Output Enable.lvclass"/>
-			<Item Name="Error.lvclass" Type="LVClass" URL="../../Capabilities/Capabilities/Low Level Capabilities/Error/Error.lvclass"/>
-			<Item Name="Power Setpoint.lvclass" Type="LVClass" URL="../../Capabilities/Capabilities/Low Level Capabilities/Power/Power Setpoint/Power Setpoint.lvclass"/>
-			<Item Name="Power Actual Value.lvclass" Type="LVClass" URL="../../Capabilities/Capabilities/Low Level Capabilities/Power/Power Actual Value/Power Actual Value.lvclass"/>
-			<Item Name="Current Limit.lvclass" Type="LVClass" URL="../../Capabilities/Capabilities/Low Level Capabilities/Current/Current Limit/Current Limit.lvclass"/>
-			<Item Name="Power Limit.lvclass" Type="LVClass" URL="../../Capabilities/Capabilities/Low Level Capabilities/Power/Power Limit/Power Limit.lvclass"/>
-			<Item Name="Error Channels.lvclass" Type="LVClass" URL="../../Capabilities/Capabilities/Low Level Capabilities/Error Channels/Error Channels.lvclass"/>
-			<Item Name="Control Mode.lvclass" Type="LVClass" URL="../../Capabilities/Capabilities/Low Level Capabilities/Control Mode/Control Mode.lvclass"/>
-			<Item Name="Voltage Limit.lvclass" Type="LVClass" URL="../../Capabilities/Capabilities/Low Level Capabilities/Voltage/Voltage Limit/Voltage Limit.lvclass"/>
-			<Item Name="Voltage Gradient.lvclass" Type="LVClass" URL="../../Capabilities/Capabilities/Low Level Capabilities/Voltage/Voltage Gradient/Voltage Gradient.lvclass"/>
-			<Item Name="Power Gradient.lvclass" Type="LVClass" URL="../../Capabilities/Capabilities/Low Level Capabilities/Power/Power Gradient/Power Gradient.lvclass"/>
-			<Item Name="Current Gradient.lvclass" Type="LVClass" URL="../../Capabilities/Capabilities/Low Level Capabilities/Current/Current Gradient/Current Gradient.lvclass"/>
-			<Item Name="Capabilities.lvclass" Type="LVClass" URL="../../Capabilities/Capabilities/Capabilities.lvclass"/>
+			<Item Name="Power Supply Cluster.lvclass" Type="LVClass" URL="../../Capabilities/Capabilities/High Level Capabilities/Power Supply Cluster/Power Supply Cluster.lvclass"/>
+			<Item Name="DOMUserDefRef.dll" Type="Document" URL="DOMUserDefRef.dll">
+				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
+			</Item>
+			<Item Name="Cluster.lvclass" Type="LVClass" URL="../../Capabilities/Capabilities/Parents/Cluster/Cluster.lvclass"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="AMS Power Supply Template" Type="Packed Library">
@@ -990,12 +985,13 @@ AddOutputFilter chunkFilter
 				<Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
 				<Property Name="Bld_excludeTypedefs" Type="Bool">true</Property>
 				<Property Name="Bld_localDestDir" Type="Path">/C/builds</Property>
+				<Property Name="Bld_postActionVIID" Type="Ref">/My Computer/Post-Build Action.vi</Property>
 				<Property Name="Bld_preActionVIID" Type="Ref">/My Computer/Pre-Build Action.vi</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{D97CD1D6-D13C-4DB8-9216-011E18E426CA}</Property>
 				<Property Name="Bld_targetDestDir" Type="Path">/usr/lib/x86_64-linux-gnu/ni-evo-engine/plugins</Property>
-				<Property Name="Bld_version.major" Type="Int">1</Property>
-				<Property Name="Destination[0].destName" Type="Str">AMS Power Supply Template.1.0.lvlibp</Property>
-				<Property Name="Destination[0].path" Type="Path">/usr/lib/x86_64-linux-gnu/ni-evo-engine/plugins/AMS Power Supply Template.1.0.lvlibp</Property>
+				<Property Name="Bld_version.major" Type="Int">2</Property>
+				<Property Name="Destination[0].destName" Type="Str">AMS Power Supply Template.2.0.lvlibp</Property>
+				<Property Name="Destination[0].path" Type="Path">/usr/lib/x86_64-linux-gnu/ni-evo-engine/plugins/AMS Power Supply Template.2.0.lvlibp</Property>
 				<Property Name="Destination[0].path.type" Type="Str">&lt;none&gt;</Property>
 				<Property Name="Destination[0].preserveHierarchy" Type="Bool">true</Property>
 				<Property Name="Destination[0].type" Type="Str">App</Property>
@@ -1003,7 +999,7 @@ AddOutputFilter chunkFilter
 				<Property Name="Destination[1].path" Type="Path">/usr/lib/x86_64-linux-gnu/ni-evo-engine/plugins</Property>
 				<Property Name="Destination[1].path.type" Type="Str">&lt;none&gt;</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
-				<Property Name="Source[0].itemID" Type="Str">{DDA085BA-CC1E-45F6-8309-525F6D806BC8}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{6ECCE13A-103B-4CFE-A720-1FF255B8AD20}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/RT PXI Target/AMS Power Supply Template.lvlib</Property>
@@ -1020,7 +1016,7 @@ AddOutputFilter chunkFilter
 				<Property Name="TgtF_legalCopyright" Type="Str">Copyright © 2022 NI</Property>
 				<Property Name="TgtF_productName" Type="Str">AMS Power Supply Template</Property>
 				<Property Name="TgtF_targetfileGUID" Type="Str">{E1985B85-F159-441F-9EAD-7499C0C5512C}</Property>
-				<Property Name="TgtF_targetfileName" Type="Str">AMS Power Supply Template.1.0.lvlibp</Property>
+				<Property Name="TgtF_targetfileName" Type="Str">AMS Power Supply Template.2.0.lvlibp</Property>
 				<Property Name="TgtF_versionIndependent" Type="Bool">true</Property>
 			</Item>
 		</Item>
