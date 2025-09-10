@@ -604,7 +604,6 @@
 			<Item Name="provcom_GetProvidersDirPseudo.vi" Type="VI" URL="/&lt;resource&gt;/Framework/Providers/Common/provcom_GetProvidersDirPseudo.vi"/>
 			<Item Name="mxLvGetItemRef.vi" Type="VI" URL="/&lt;resource&gt;/Framework/Providers/API/mxLvGetItemRef.vi"/>
 			<Item Name="_LaunchHelpUrl.vi" Type="VI" URL="/&lt;helpdir&gt;/_LaunchHelpUrl.vi"/>
-			<Item Name="9c1d1a77308d2a44" Type="VI" URL="/&lt;resource&gt;/9c1d1a77308d2a44"/>
 			<Item Name="Utilities.lvlib" Type="Library" URL="../../Capabilities/Capabilities/Utilities/Utilities.lvlib"/>
 			<Item Name="AdasHilServices.dll" Type="Document" URL="AdasHilServices.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
@@ -984,22 +983,22 @@ AddOutputFilter chunkFilter
 				<Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
 				<Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
 				<Property Name="Bld_excludeTypedefs" Type="Bool">true</Property>
-				<Property Name="Bld_localDestDir" Type="Path">/C/builds</Property>
+				<Property Name="Bld_localDestDir" Type="Path">/C/builds/RT</Property>
 				<Property Name="Bld_postActionVIID" Type="Ref">/My Computer/Post-Build Action.vi</Property>
 				<Property Name="Bld_preActionVIID" Type="Ref">/My Computer/Pre-Build Action.vi</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{D97CD1D6-D13C-4DB8-9216-011E18E426CA}</Property>
-				<Property Name="Bld_targetDestDir" Type="Path">/usr/lib/x86_64-linux-gnu/ni-evo-engine/plugins</Property>
+				<Property Name="Bld_targetDestDir" Type="Path">/usr</Property>
 				<Property Name="Bld_version.major" Type="Int">2</Property>
 				<Property Name="Destination[0].destName" Type="Str">AMS Power Supply Template.2.0.lvlibp</Property>
-				<Property Name="Destination[0].path" Type="Path">/usr/lib/x86_64-linux-gnu/ni-evo-engine/plugins/AMS Power Supply Template.2.0.lvlibp</Property>
+				<Property Name="Destination[0].path" Type="Path">/usr/AMS Power Supply Template.2.0.lvlibp</Property>
 				<Property Name="Destination[0].path.type" Type="Str">&lt;none&gt;</Property>
 				<Property Name="Destination[0].preserveHierarchy" Type="Bool">true</Property>
 				<Property Name="Destination[0].type" Type="Str">App</Property>
 				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
-				<Property Name="Destination[1].path" Type="Path">/usr/lib/x86_64-linux-gnu/ni-evo-engine/plugins</Property>
+				<Property Name="Destination[1].path" Type="Path">/usr</Property>
 				<Property Name="Destination[1].path.type" Type="Str">&lt;none&gt;</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
-				<Property Name="Source[0].itemID" Type="Str">{6ECCE13A-103B-4CFE-A720-1FF255B8AD20}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{8826CAA4-DA1F-4C89-BC99-84E46D0141F5}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/RT PXI Target/AMS Power Supply Template.lvlib</Property>
