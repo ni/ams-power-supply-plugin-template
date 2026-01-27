@@ -604,6 +604,7 @@
 			<Item Name="provcom_GetProvidersDirPseudo.vi" Type="VI" URL="/&lt;resource&gt;/Framework/Providers/Common/provcom_GetProvidersDirPseudo.vi"/>
 			<Item Name="mxLvGetItemRef.vi" Type="VI" URL="/&lt;resource&gt;/Framework/Providers/API/mxLvGetItemRef.vi"/>
 			<Item Name="_LaunchHelpUrl.vi" Type="VI" URL="/&lt;helpdir&gt;/_LaunchHelpUrl.vi"/>
+			<Item Name="9c1d1a77308d2a44" Type="VI" URL="/&lt;resource&gt;/9c1d1a77308d2a44"/>
 			<Item Name="Utilities.lvlib" Type="Library" URL="../../Capabilities/Capabilities/Utilities/Utilities.lvlib"/>
 			<Item Name="AdasHilServices.dll" Type="Document" URL="AdasHilServices.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
@@ -837,6 +838,10 @@ AddOutputFilter chunkFilter
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
 			<Item Name="LV Config Read String.vi" Type="VI" URL="/&lt;resource&gt;/dialog/lvconfig.llb/LV Config Read String.vi"/>
+			<Item Name="Power Supply Cluster.lvclass" Type="LVClass" URL="../../Capabilities/Capabilities/High Level Capabilities/Power Supply Cluster/Power Supply Cluster.lvclass"/>
+			<Item Name="DOMUserDefRef.dll" Type="Document" URL="DOMUserDefRef.dll">
+				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
+			</Item>
 			<Item Name="evoPluginSDK.lvlibp" Type="LVLibp" URL="../../../ADAS Replay HIL/EVO SDK/Linux RT/evoLabVIEWAPI/evoPluginSDK.lvlibp">
 				<Item Name="EventData" Type="Folder">
 					<Item Name="ExecuteEventData.ctl" Type="VI" URL="../../../ADAS Replay HIL/EVO SDK/Linux RT/evoLabVIEWAPI/evoPluginSDK.lvlibp/VIs/EventData/ExecuteEventData.ctl"/>
@@ -934,17 +939,6 @@ AddOutputFilter chunkFilter
 				<Item Name="StopTimer.vi" Type="VI" URL="../../../ADAS Replay HIL/EVO SDK/Linux RT/evoLabVIEWAPI/evoPluginSDK.lvlibp/VIs/StopTimer.vi"/>
 				<Item Name="UnlockXData.vi" Type="VI" URL="../../../ADAS Replay HIL/EVO SDK/Linux RT/evoLabVIEWAPI/evoPluginSDK.lvlibp/VIs/UnlockXData.vi"/>
 			</Item>
-			<Item Name="evoPluginWrapperSDK.lvlibp" Type="LVLibp" URL="../../../ADAS Replay HIL/EVO SDK/Linux RT/evoLabVIEWAPI/evoPluginWrapperSDK.lvlibp">
-				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="../../../ADAS Replay HIL/EVO SDK/Linux RT/evoLabVIEWAPI/evoPluginWrapperSDK.lvlibp/1abvi3w/vi.lib/Utility/error.llb/Error Cluster From Error Code.vi"/>
-				<Item Name="EvaluateWrapperErrors.vi" Type="VI" URL="../../../ADAS Replay HIL/EVO SDK/Linux RT/evoLabVIEWAPI/evoPluginWrapperSDK.lvlibp/evoPluginWrapperSDK/VIs/EvaluateWrapperErrors.vi"/>
-				<Item Name="ExitEventHandleError.vi" Type="VI" URL="../../../ADAS Replay HIL/EVO SDK/Linux RT/evoLabVIEWAPI/evoPluginWrapperSDK.lvlibp/evoPluginWrapperSDK/VIs/ExitEventHandleError.vi"/>
-				<Item Name="ExtractPluginClass.vi" Type="VI" URL="../../../ADAS Replay HIL/EVO SDK/Linux RT/evoLabVIEWAPI/evoPluginWrapperSDK.lvlibp/evoPluginWrapperSDK/VIs/ExtractPluginClass.vi"/>
-				<Item Name="Get LV Class Default Value.vi" Type="VI" URL="../../../ADAS Replay HIL/EVO SDK/Linux RT/evoLabVIEWAPI/evoPluginWrapperSDK.lvlibp/1abvi3w/vi.lib/Utility/LVClass/Get LV Class Default Value.vi"/>
-				<Item Name="GetPluginClassPathOrPattern.vi" Type="VI" URL="../../../ADAS Replay HIL/EVO SDK/Linux RT/evoLabVIEWAPI/evoPluginWrapperSDK.lvlibp/evoPluginWrapperSDK/VIs/GetPluginClassPathOrPattern.vi"/>
-				<Item Name="ItemEventComplete.vi" Type="VI" URL="../../../ADAS Replay HIL/EVO SDK/Linux RT/evoLabVIEWAPI/evoPluginWrapperSDK.lvlibp/evoPluginWrapperSDK/VIs/ItemEventComplete.vi"/>
-				<Item Name="NI_PackedLibraryUtility.lvlib" Type="Library" URL="../../../ADAS Replay HIL/EVO SDK/Linux RT/evoLabVIEWAPI/evoPluginWrapperSDK.lvlibp/1abvi3w/vi.lib/Utility/LVLibp/NI_PackedLibraryUtility.lvlib"/>
-				<Item Name="WrapperHelpers.lvlib" Type="Library" URL="../../../ADAS Replay HIL/EVO SDK/Linux RT/evoLabVIEWAPI/evoPluginWrapperSDK.lvlibp/WrapperHelpers/WrapperHelpers.lvlib"/>
-			</Item>
 			<Item Name="EVOXDataAccessors.lvlib" Type="Library" URL="../../../ADAS Replay HIL/EVO SDK/Linux RT/evoLabVIEWAPI/evoXDataAccessors.llb/EVOXDataAccessors.lvlib"/>
 			<Item Name="evoBlockPlugin.lvlibp" Type="LVLibp" URL="../../../ADAS Replay HIL/EVO SDK/Linux RT/evoLabVIEWAPI/evoBlockPlugin.lvlibp">
 				<Item Name="BlockWrapper" Type="Folder">
@@ -968,11 +962,18 @@ AddOutputFilter chunkFilter
 				<Item Name="BlockPluginInterface.2023.1.lvclass" Type="LVClass" URL="../../../ADAS Replay HIL/EVO SDK/Linux RT/evoLabVIEWAPI/evoBlockPlugin.lvlibp/evoBlockPlugin/BlockPluginInterface.2023.1/BlockPluginInterface.2023.1.lvclass"/>
 				<Item Name="WrapperHelpers.lvlib" Type="Library" URL="../../../ADAS Replay HIL/EVO SDK/Linux RT/evoLabVIEWAPI/evoBlockPlugin.lvlibp/WrapperHelpers/WrapperHelpers.lvlib"/>
 			</Item>
-			<Item Name="Utilities.lvlib" Type="Library" URL="../../Capabilities/Capabilities/Utilities/Utilities.lvlib"/>
-			<Item Name="Power Supply Cluster.lvclass" Type="LVClass" URL="../../Capabilities/Capabilities/High Level Capabilities/Power Supply Cluster/Power Supply Cluster.lvclass"/>
-			<Item Name="DOMUserDefRef.dll" Type="Document" URL="DOMUserDefRef.dll">
-				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
+			<Item Name="evoPluginWrapperSDK.lvlibp" Type="LVLibp" URL="../../../ADAS Replay HIL/EVO SDK/Linux RT/evoLabVIEWAPI/evoPluginWrapperSDK.lvlibp">
+				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="../../../ADAS Replay HIL/EVO SDK/Linux RT/evoLabVIEWAPI/evoPluginWrapperSDK.lvlibp/1abvi3w/vi.lib/Utility/error.llb/Error Cluster From Error Code.vi"/>
+				<Item Name="EvaluateWrapperErrors.vi" Type="VI" URL="../../../ADAS Replay HIL/EVO SDK/Linux RT/evoLabVIEWAPI/evoPluginWrapperSDK.lvlibp/evoPluginWrapperSDK/VIs/EvaluateWrapperErrors.vi"/>
+				<Item Name="ExitEventHandleError.vi" Type="VI" URL="../../../ADAS Replay HIL/EVO SDK/Linux RT/evoLabVIEWAPI/evoPluginWrapperSDK.lvlibp/evoPluginWrapperSDK/VIs/ExitEventHandleError.vi"/>
+				<Item Name="ExtractPluginClass.vi" Type="VI" URL="../../../ADAS Replay HIL/EVO SDK/Linux RT/evoLabVIEWAPI/evoPluginWrapperSDK.lvlibp/evoPluginWrapperSDK/VIs/ExtractPluginClass.vi"/>
+				<Item Name="Get LV Class Default Value.vi" Type="VI" URL="../../../ADAS Replay HIL/EVO SDK/Linux RT/evoLabVIEWAPI/evoPluginWrapperSDK.lvlibp/1abvi3w/vi.lib/Utility/LVClass/Get LV Class Default Value.vi"/>
+				<Item Name="GetPluginClassPathOrPattern.vi" Type="VI" URL="../../../ADAS Replay HIL/EVO SDK/Linux RT/evoLabVIEWAPI/evoPluginWrapperSDK.lvlibp/evoPluginWrapperSDK/VIs/GetPluginClassPathOrPattern.vi"/>
+				<Item Name="ItemEventComplete.vi" Type="VI" URL="../../../ADAS Replay HIL/EVO SDK/Linux RT/evoLabVIEWAPI/evoPluginWrapperSDK.lvlibp/evoPluginWrapperSDK/VIs/ItemEventComplete.vi"/>
+				<Item Name="NI_PackedLibraryUtility.lvlib" Type="Library" URL="../../../ADAS Replay HIL/EVO SDK/Linux RT/evoLabVIEWAPI/evoPluginWrapperSDK.lvlibp/1abvi3w/vi.lib/Utility/LVLibp/NI_PackedLibraryUtility.lvlib"/>
+				<Item Name="WrapperHelpers.lvlib" Type="Library" URL="../../../ADAS Replay HIL/EVO SDK/Linux RT/evoLabVIEWAPI/evoPluginWrapperSDK.lvlibp/WrapperHelpers/WrapperHelpers.lvlib"/>
 			</Item>
+			<Item Name="Utilities.lvlib" Type="Library" URL="../../Capabilities/Capabilities/Utilities/Utilities.lvlib"/>
 			<Item Name="Cluster.lvclass" Type="LVClass" URL="../../Capabilities/Capabilities/Parents/Cluster/Cluster.lvclass"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
